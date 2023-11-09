@@ -11,6 +11,7 @@
             <div class="hour hand"></div>
             <div class="minutes hand"></div>
             <div class="second hand"></div>
+            <div class="center"></div>
         </div>
     </div>
 </body>
@@ -43,16 +44,35 @@
     }
     .hand{
         width: 5px;
-        height: 50%;
         background-color: black;
         position: absolute;
         left: 50%;
-        transform-origin: 100%;
-        
+        transform-origin: 0% 100%;
+        border-radius: 100%;
+    }
+    .center{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 20px;
+        height: 20px;
+        background-color: rgb(218, 165, 32);
+    }
+    .hour{
+        top: 20%;
+        height: 30%;
     }
     .second{
+        height: 40%;
+        top: 10%;
         background-color: violet;
-        transform: rotate(90deg);
+        transform: rotate(60deg);
+    }
+    .minutes{
+        height: 45%;
+        top: 5%;
+        background-color: blue;
+        transform: rotate(120deg);
     }
 </style>
 </html>
