@@ -1,5 +1,6 @@
 *{
     margin: 0px;
+    padding: 0px;
     box-sizing: border-box;
 }
 body,
@@ -25,13 +26,35 @@ html{
 }
 .hand{
     width: 5px;
-    height: 50%;
     background-color: black;
     position: absolute;
-    transform-origin: 100%;
-
+    left: 50%;
+    transform-origin: 50% 100%;
+    border-radius: 100%;
+    transition: all .9s;
+}
+.center{
+    position: absolute;
+    top: 48%;
+    left: 49%;
+    width: 20px;
+    height: 20px;
+    background-color: rgb(218, 165, 32);
+    border-radius: 50%;
+}
+.hour{
+    top: 20%;
+    height: 30%;
 }
 .second{
+    height: 40%;
+    top: 10%;
     background-color: violet;
-    transform: rotate(90deg);
+    transform: rotate(190deg);
+}
+.minutes{
+    height: 45%;
+    top: 5%;
+    background-color: blue;
+    transform: rotate(120deg);
 }

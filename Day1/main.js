@@ -17,6 +17,13 @@ class Key {
     let keytext = keylabels[index];
     key.innerText = keytext;
 
+    key.addEventListener("click",function(){
+      key.classList.add("playing-key");
+      audio.src = keysound;
+      audio.currentTime = 0;
+      audio.play();
+    })
+
     //sound
     window.addEventListener("keydown", function (event) {
       let eventkey = event.key.toUpperCase();
