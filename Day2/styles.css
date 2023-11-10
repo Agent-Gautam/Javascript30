@@ -25,6 +25,7 @@ html{
     box-shadow: 0px 0px 5px 5px white;
 }
 .hand{
+    display: none;
     width: 5px;
     background-color: black;
     position: absolute;
@@ -32,6 +33,15 @@ html{
     transform-origin: 50% 100%;
     border-radius: 100%;
     transition: all .9s;
+}
+.roman{
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    border: 1px solid red;
+    top: 45%;
+    left: 46%;
+    transform-origin: 50% 100%;
 }
 .center{
     position: absolute;
@@ -50,11 +60,11 @@ html{
     height: 40%;
     top: 10%;
     background-color: violet;
-    transform: rotate(190deg);
+    transform: rotate(0deg);
+    transition-timing-function: cubic-bezier(0.1,1.7,0,1);
 }
 .minutes{
     height: 45%;
     top: 5%;
     background-color: blue;
-    transform: rotate(120deg);
 }

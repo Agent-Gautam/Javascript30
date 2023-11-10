@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roman Numerals Clock</title>
+    <style>
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #282c34;
+            color: #61dafb;
+        }
+
+        #clock {
+            position: relative;
+            width: 200px;
+            height: 200px;
+            border: 2px solid #61dafb;
+            border-radius: 50%;
+            overflow: hidden;
+        }
+
+        .hand {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform-origin: 50% 100%;
+            background-color: #61dafb;
+        }
+
+        .second-hand {
+            height: 2px;
+            width: 50%;
+            animation: rotate 60s linear infinite;
+        }
+
+        @keyframes rotate {
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        .numeral {
+            position: absolute;
+            font-size: 14px;
+            font-weight: bold;
+            transform-origin: 50% 100%;
+        }
+
+        .numeral.I { top: 5%; left: 50%; }
+        .numeral.II { top: 15%; left: 80%; }
+        .numeral.III { top: 50%; left: 90%; }
+        .numeral.IV { bottom: 5%; left: 80%; }
+        .numeral.V { bottom: 5%; left: 50%; }
+        .numeral.VI { bottom: 5%; left: 20%; }
+        .numeral.VII { top: 50%; left: 10%; }
+        .numeral.VIII { top: 15%; left: 20%; }
+        .numeral.IX { top: 5%; left: 50%; }
+        .numeral.XII { top: 85%; left: 50%; }
+    </style>
+</head>
+<body>
+    <div id="clock">
+        <div class="numeral I">I</div>
+        <div class="numeral II">II</div>
+        <div class="numeral III">III</div>
+        <div class="numeral IV">IV</div>
+        <div class="numeral V">V</div>
+        <div class="numeral VI">VI</div>
+        <div class="numeral VII">VII</div>
+        <div class="numeral VIII">VIII</div>
+        <div class="numeral IX">IX</div>
+        <div class="numeral X">X</div>
+        <div class="numeral XII">XII</div>
+        <div class="hand second-hand"></div>
+    </div>
+</body>
+</html>
