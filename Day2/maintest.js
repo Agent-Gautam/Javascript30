@@ -1,4 +1,4 @@
-let labels = ['I','II','III','IV','V','VI','VII','VIII','IX','X','XI','XII'];
+let labels = ['XII','I','II','III','IV','V','VI','VII','VIII','IX','X','XI'];
 
 let clock = document.querySelector(".clock");
 let sechand = document.querySelector(".second");
@@ -7,12 +7,17 @@ let minhand = document.querySelector(".minutes");
 let now = new Date();
 
 //showing roman labels
-// for(let roman of labels){
-//     let romandiv = document.createElement("div");
-//     romandiv.classList.add("roman");
-//     romandiv.style.transform = "rotate(45deg)"
-//     clock.append(romandiv);
-// }
+for(let r = 1; r <= 12; r++){
+    let romandiv = document.createElement("div");
+    romandiv.classList.add(`roman${r}`,'roman');
+    romandiv.innerHTML = labels[r-1];
+    clock.append(romandiv);
+}
+
+for(let d = 0,r = 1; d <= 360 && r <=12; d=d+30, r++){
+    document.querySelector(`.roman${r}`).style.transform = `rotate(${d}deg)`;
+}
+
 
 let sec = now.getSeconds();
 let min = now.getMinutes();
