@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Box Shadow Selector</title>
+  </head>
+  <body>
+    <div class="main">
+      <div class="maincol1">
+        <div class="head1"><h1>Box-shadow</h1></div>
+        <div class="maincon">
+          <div class="box">Hello</div>
+          <div class="selection">
+            <div class="seldivs">
+              <label for="x" class="selables">X</label>
+              <input type="range" name="x" value="10" id="hz" data-sizing="px"/>
+            </div>
+            <div class="seldivs">
+              <label for="y" class="selables">Y</label>
+              <input type="range" name="y" value="10" id="vt" data-sizing="px"/>
+            </div>
+            <div class="seldivs">
+              <label for="blur" class="selables">Blur</label>
+              <input type="range" name="blur" value="5" id="bl" data-sizing="px"/>
+            </div>
+            <div class="seldivs">
+              <label for="spread" class="selables">Spread</label>
+              <input type="range" name="spread" value="5" id="spd" data-sizing="px"/>
+            </div>
+            <div class="seldivs">
+                <label for="color" class="selables">color</label>
+                <input type="color" name="color" value="#adff2f" id="cl" data-sizing="">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="maincol2">
+        <div class="code"><code id="code">box-shadow: 
+          <span class="x">10px</span> 
+          <span class="y">10px</span> 
+          <span class="blur">5px</span> 
+          <span class="spread">5px</span>
+          <span class="color">#adff2f</span>
+        </code></div>
+        <button id="copy" type="button">Copy</button>
+      </div>
+    </div>
+    <script src="main.js"></script>
+  </body>
+</html>
