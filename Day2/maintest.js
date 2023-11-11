@@ -25,7 +25,7 @@ let hour = now.getHours();
 
 let degs = ((sec/60)*360);
 let degm = ((min/60)*360);
-let degh = ((hour/12)*360);
+let degh = ((hour/12)*360) + ((min/60)*30);
 
 sechand.style.transform = `rotate(${degs}deg)`;
 minhand.style.transform = `rotate(${degm}deg)`;
