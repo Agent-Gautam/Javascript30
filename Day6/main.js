@@ -19,8 +19,8 @@ function findcountries(find) {
   return filtered;
 }
 function display(event) {
-  let inputValue = event.target.value.trim(); // Trim to handle whitespace-only input
-  removeall(); // Always clear the results first
+  let inputValue = event.target.value.trim();
+  removeall();
 
   if (inputValue !== "") {
     let filcon = findcountries(inputValue);

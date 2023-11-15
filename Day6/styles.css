@@ -13,19 +13,15 @@ body,html{
     display: flex;
     justify-content: center;
     padding-top: 30px;
-    /* background-color: skyblue; */
     background-image: url(https://media.istockphoto.com/id/183319682/photo/old-map-of-the-world.jpg?s=612x612&w=0&k=20&c=9vpEk-NTi5eYHTGSlWqOh9ZVh_4wLDp5i89lMM286jk=);
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-    /* border: 1px solid black; */
 }
 .search{
     position: absolute;
-    /* top: 5%; */
     width: 40%;
     max-height: 90%;
-    /* border: 1px solid red; */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -40,6 +36,10 @@ body,html{
     padding: 15px;
     border-radius: 20px;
     background-color: rgba(255, 255, 255, 0.66);
+    border: none;
+}
+.coninp:focus{
+    box-shadow: 0px 0px 4px 4px inset;
 }
 .coninp::before,.coninp::after{
     content: "";
@@ -55,18 +55,17 @@ ul{
     flex-direction: column;
     align-items: center;
     color: white;
-    /* border: 1px solid greenyellow; */
-    /* overflow: auto; */
+    font-family: cursive, Cochin, Georgia, Times, 'Times New Roman', serif,'Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif;
 }
 ul li{
     padding: 17px 15px;
     list-style: none;
-    width: 98%;
+    width: 95%;
     height: 50px;
     border:1px solid  black;
     cursor: pointer;
     background-color: rgba(70, 70, 70, 0.607);
-
+    font: large;
 }
 ul li:nth-child(odd){
     transform: skewX(10deg);
@@ -82,6 +81,10 @@ ul li:nth-child(even){
     align-self: center;
     object-fit: cover;
     border-radius: 65px;
+    font-size: 3rem;
+    color: #382821;
+    font-family: cursive, Cochin, Georgia, Times, 'Times New Roman', serif,'Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif;
+    text-align: center; 
 }
 .highlight{
     background-color: orange;
