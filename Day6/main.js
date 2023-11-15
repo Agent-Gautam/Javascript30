@@ -26,8 +26,7 @@ function display(event) {
     let filcon = findcountries(inputValue);
     for (let res of filcon) {
       let li = document.createElement("li");
-      li.innerHTML = res["country"];
-      highlight(res["country"],inputValue);
+      li.innerHTML = highlight(res["country"],inputValue);
       results.append(li);
       li.addEventListener("click", () => {
         removeall();
@@ -39,8 +38,10 @@ function display(event) {
   }
 }
 function highlight(searchresult,input){
-  let replace = searchresult.replace(input,`<span class="highlight">${input}</span>`)
-  return replace
+  let regex = new RegExp(input,"gi");
+  let changedcase = input.charAt(0).toUpperCase() + input.slice(1);
+  let replace = searchresult.replace(regex,`<span class="highlight">${changedcase}</span>`)
+  return replace;
 }
 function removeall() {
     image.src = "";
