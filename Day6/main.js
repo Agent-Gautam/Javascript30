@@ -1,6 +1,7 @@
 let results = document.querySelector(".results");
 let image = document.querySelector(".image");
 let input = document.querySelector(".coninp");
+let example = document.querySelector(".example")
 
 let endpoint =
   "https://gist.githubusercontent.com/pratikbutani/20ded7151103bb30737e2ab1b336eb02/raw/be1391e25487ded4179b5f1c8eedb81b01226216/country-flag.json";
@@ -10,6 +11,7 @@ fetch(endpoint)
   .then((response) => response.json())
   .then((data) => {
     countriedobj.push(...data);
+    input.addEventListener("input", display);
   })
   .catch(error=>results.innerHTML = `<li>${error}</li>`);
 
@@ -49,4 +51,3 @@ function removeall() {
     results.removeChild(results.firstChild);
   }
 }
-input.addEventListener("input", display);
