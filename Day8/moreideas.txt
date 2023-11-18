@@ -1,0 +1,9 @@
+*for making fan like pattern draw fun looks like this: 
+    function draw(e){
+    ctx.beginPath();
+    ctx.moveTo(lastX,lastY);
+    ctx.lineTo(e.offsetX,e.offsetY);
+    if(isdrawing === true){
+        ctx.stroke();
+    }
+}
