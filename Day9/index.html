@@ -98,6 +98,8 @@
   </div>
 <script>
   let shift = false;
+  let shiftcheck = false;
+  let lastcheck = 0;
 let checks = document.querySelectorAll("input");
 
 window.addEventListener("keydown", function (event) {
@@ -108,27 +110,24 @@ window.addEventListener("keydown", function (event) {
 
 window.addEventListener("keyup", function (event) {
   if (event.key === "Shift") {
-    shift = false;
-    console.log("Shift key released. Not listening.");
-    check.forEach(check => {
-      check.removeEventListener("input",innerlisten);
-    })
+    shift = false; 
   }
 });
-function innerlisten(event){
-  console.log(index1,index2);
-}
-function listen(event){
-    if (shift) {
-      console.log("Listening for checkbox changes.");
-      checks.forEach((ch, index2) => {
-        ch.addEventListener("input", innerlisten);
-      });
+
+checks.forEach((check,index)=>{
+  check.addEventListener("input",function(event){
+    if(shift && shiftcheck){
+      if(index<lastcheck)[lastcheck,index] = [index,lastcheck];
+      for(let i = lastcheck+1; i < index;i++){
+        checks[i].checked = !(checks[i].checked);
+      }
     }
-  }
-checks.forEach((check, index1) => {
-  check.addEventListener("input",listen);
-});
+    else{
+      shiftcheck = true;
+      lastcheck = index;
+    }
+  })
+})
 </script>
 
 </body>
