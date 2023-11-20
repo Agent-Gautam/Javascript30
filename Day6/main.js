@@ -7,6 +7,7 @@ let endpoint =
   "https://gist.githubusercontent.com/pratikbutani/20ded7151103bb30737e2ab1b336eb02/raw/be1391e25487ded4179b5f1c8eedb81b01226216/country-flag.json";
 const countriedobj = [];
 
+console.time('fetching data')
 fetch(endpoint)
   .then((response) => response.json())
   .then((data) => {
@@ -14,6 +15,7 @@ fetch(endpoint)
     input.addEventListener("input", display);
   })
   .catch(error=>results.innerHTML = `<li>${error}</li>`);
+  console.timeEnd('fetching data');
 
 function findcountries(find) {
   let regex = new RegExp(find, "gi");

@@ -1,10 +1,8 @@
 let canvas = document.querySelector("#draw");
-console.log(canvas);
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 let ctx = canvas.getContext("2d");
-console.log(ctx);
-ctx.lineWidth = 50;
+ctx.lineWidth = 10;
 ctx.lineJoin = "round";
 ctx.lineCap = "round";
 let [lastX,lastY] = [0,0];
@@ -17,7 +15,6 @@ function start(e){
 }
 function draw(e){
     ctx.strokeStyle = `hsl(${hue},100%,50%)`;
-    [lastX,lastY] = [e.offsetX,e.offsetY];
     ctx.beginPath();
     ctx.moveTo(lastX,lastY);
     ctx.lineTo(e.offsetX,e.offsetY);
@@ -25,6 +22,7 @@ function draw(e){
         ctx.stroke();
     }
     hue = (hue+1)%360;
+    [lastX,lastY] = [e.offsetX,e.offsetY];
 }
 function stop(){
     isdrawing = false;

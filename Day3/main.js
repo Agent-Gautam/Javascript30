@@ -26,3 +26,4 @@ copy.addEventListener("click",function(){
     let text = code.textContent;
     navigator.clipboard.writeText(text);
 })
+console.log('hello i am some %c string','font-size:68px')
