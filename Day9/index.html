@@ -1,135 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
-  <title>Hold Shift to Check Multiple Checkboxes</title>
+  <title>Console Tricks!</title>
   <link rel="icon" href="https://fav.farm/🔥" />
 </head>
-
 <body>
-  <style>
-    html {
-      font-family: sans-serif;
-      background: #ffc600;
+
+  <p onClick="makeGreen()">×BREAK×DOWN×</p>
+
+  <script>
+    const dogs = [{ name: 'Snickers', age: 2 }, { name: 'hugo', age: 8 }];
+
+    const p = document.querySelector('p');
+
+    function makeGreen() {
+      
+      p.style.color = '#BADA55';
+      p.style.fontSize = '50px';
     }
 
-    .inbox {
-      max-width: 400px;
-      margin: 50px auto;
-      background: white;
-      border-radius: 5px;
-      box-shadow: 10px 10px 0 rgba(0, 0, 0, 0.1);
-    }
+    // Regular
+    console.log(dogs);
 
-    .item {
-      display: flex;
-      align-items: center;
-      border-bottom: 1px solid #F1F1F1;
-    }
+    // Interpolated
+    console.log("dogs are $s","fun");
 
-    .item:last-child {
-      border-bottom: 0;
-    }
+    // Styled
+    console.log("dogs are %c amazing")
 
-    input:checked+p {
-      background: #F9F9F9;
-      text-decoration: line-through;
-    }
+    // warning!
+    console.warn("This may give error");
 
-    input[type="checkbox"] {
-      margin: 20px;
-    }
+    // Error :|
+    console.log("Whoops! you got an error");
 
-    p {
-      margin: 0;
-      padding: 20px;
-      transition: background 0.2s;
-      flex: 1;
-      font-family: 'helvetica neue';
-      font-size: 20px;
-      font-weight: 200;
-      border-left: 1px solid #D1E2FF;
-    }
-  </style>
-  <!--
-   The following is a common layout you would see in an email client.
+    // Info
+    console.info("this is some info you might need");
 
-   When a user clicks a checkbox, holds Shift, and then clicks another checkbox a few rows down, all the checkboxes inbetween those two checkboxes should be checked.
+    // Testing
 
-  -->
-  <div class="inbox">
-    <div class="item">
-      <input type="checkbox">
-      <p>This is an inbox layout.</p>
-    </div>
-    <div class="item">
-      <input type="checkbox">
-      <p>Check one item</p>
-    </div>
-    <div class="item">
-      <input type="checkbox">
-      <p>Hold down your Shift key</p>
-    </div>
-    <div class="item">
-      <input type="checkbox">
-      <p>Check a lower item</p>
-    </div>
-    <div class="item">
-      <input type="checkbox">
-      <p>Everything in between should also be set to checked</p>
-    </div>
-    <div class="item">
-      <input type="checkbox">
-      <p>Try to do it without any libraries</p>
-    </div>
-    <div class="item">
-      <input type="checkbox">
-      <p>Just regular JavaScript</p>
-    </div>
-    <div class="item">
-      <input type="checkbox">
-      <p>Good Luck!</p>
-    </div>
-    <div class="item">
-      <input type="checkbox">
-      <p>Don't forget to tweet your result!</p>
-    </div>
-  </div>
-<script>
-  let shift = false;
-  let shiftcheck = false;
-  let lastcheck = 0;
-let checks = document.querySelectorAll("input");
 
-window.addEventListener("keydown", function (event) {
-  if (event.key === "Shift") {
-    shift = true;
-  }
-});
+    // clearing
+    console.clear();
 
-window.addEventListener("keyup", function (event) {
-  if (event.key === "Shift") {
-    shift = false; 
-  }
-});
+    // Viewing DOM Elements
+    console.dir(p);
 
-checks.forEach((check,index)=>{
-  check.addEventListener("input",function(event){
-    if(shift && shiftcheck){
-      if(index<lastcheck)[lastcheck,index] = [index,lastcheck];
-      for(let i = lastcheck+1; i < index;i++){
-        checks[i].checked = !(checks[i].checked);
-      }
-    }
-    else{
-      shiftcheck = true;
-      lastcheck = index;
-    }
-  })
-})
-</script>
+    // Grouping together
+    console.group();
+    dogs.forEach(dog=>console.log(dog.name));
+    dogs.forEach(dog=>console.log(dog.age));
+    console.groupEnd();
 
+    // counting
+    console.count("Gautam Anand");
+
+    // timing
+    console.time()
+    setTimeout(3000);
+    console.timeEnd();
+
+  </script>
 </body>
-
 </html>
